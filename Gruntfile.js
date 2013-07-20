@@ -216,7 +216,7 @@ module.exports = function(grunt) {
 		replaceInFile('./test/CONSTRUCTOR.html', /CONSTRUCTOR/g, constructor);
 		replaceInFile('./CONSTRUCTOR.jquery.json', /CONSTRUCTOR/g, constructor);
 		replaceInFile('./CONSTRUCTOR.jquery.json', /METHOD/g, method);
-		replaceInFile('./Gruntfile.js', 'CONSTRUCTOR.jquery.json', constructor);
+		replaceInFile('./Gruntfile.js', 'CONSTRUCTOR.jquery.json', constructor + '.jquery.json');
 		// rename files that have CONSTRUCTOR in them
 		rename('./src/CONSTRUCTOR.css', './src/' + constructor + '.css');
 		rename('./src/CONSTRUCTOR.js', './src/' + constructor + '.js');
