@@ -1,9 +1,9 @@
 {
-  "name": "***",
+  "name": "jQuery-CONSTRUCTOR",
   "title": "***",
   "description": "***",
   "version": "0.1.0-pre",
-  "homepage": "https://github.com/kensnyder/***",
+  "homepage": "https://github.com/kensnyder/jQuery-CONSTRUCTOR",
   "author": {
     "name": "Ken Snyder",
     "email": "kendsnyder@gmail.com",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kensnyder/***.git"
+    "url": "git://github.com/kensnyder/jQuery-CONSTRUCTOR.git"
   },
-  "bugs": "https://github.com/kensnyder/***/issues",
+  "bugs": "https://github.com/kensnyder/jQuery-CONSTRUCTOR/issues",
   "constructor_name": "CONSTRUCTOR",
   "method": "METHOD",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/kensnyder/***/blob/master/License"
+      "url": "https://github.com/kensnyder/jQuery-CONSTRUCTOR/blob/master/License"
     }
   ],
   "dependencies": {

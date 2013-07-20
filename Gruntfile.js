@@ -206,7 +206,7 @@ module.exports = function(grunt) {
 		replaceInFile('./package.json', /("version"\s*:\s*").+?"/, '$1'+pkg.version+'"');
 	});
 	
-	// $ grunt scaffold --constructor_name=NAME --method=NAME
+	// $ grunt scaffold --constructor_name=CONSTRUCTOR --method=METHOD
 	grunt.registerTask('scaffold', 'Init a new plugin by replacing all the instances of CONSTRUCTOR and METHOD with the given values', function() {
 		var constructor = grunt.option('constructor_name');
 		var method = grunt.option('method');		
@@ -224,7 +224,7 @@ module.exports = function(grunt) {
 		rename('./test/CONSTRUCTOR_test.js', './test/' + constructor + '_test.js');
 		rename('./CONSTRUCTOR.jquery.json', './' + constructor + '.jquery.json');
 		// remind me of what is left to do
-		console.log('TODO: fill out name in package.json; fill out stars in ' + constructor + '.jquery.json; create yui logo');
+		console.log('TODO: fill out name in package.json; update title and description in ' + constructor + '.jquery.json; create yui logo if desired');
 	});
 
 	// Default task.
