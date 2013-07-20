@@ -1,0 +1,29 @@
+{
+  "name": "***",
+  "title": "***",
+  "description": "***",
+  "version": "0.1.0",
+  "homepage": "https://github.com/kensnyder/***",
+  "author": {
+    "name": "Ken Snyder",
+    "email": "kendsnyder@gmail.com",
+    "url": "http://kendsnyder.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kensnyder/***.git"
+  },
+  "bugs": "https://github.com/kensnyder/***/issues",
+  "constructor": "CONSTRUCTOR",
+  "method": "METHOD",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kensnyder/***/blob/master/License"
+    }
+  ],
+  "dependencies": {
+    "jquery": "1.5"
+  },
+  "keywords": []
+}
