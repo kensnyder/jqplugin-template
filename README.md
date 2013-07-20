@@ -1,7 +1,7 @@
 jqplugin-template
 =
 
-MIT License
+(c) Copyright 2013 Ken Snyder under the [MIT License](http://www.opensource.org/licenses/mit-license.php)
 
 Description
 -
