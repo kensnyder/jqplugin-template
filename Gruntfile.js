@@ -15,15 +15,15 @@ module.exports = function(grunt) {
 		' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
 		// Task configuration.
 		clean: {
-			init: ['dist','docs','<%= pkg.constructor %>'],
-			compress: ['<%= pkg.constructor %>']
+			init: ['dist','docs','<%= pkg.constructor_name %>'],
+			compress: ['<%= pkg.constructor_name %>']
 		},
 		copy: {
 			css: {
 				files: [
 					{
-						src: ['./src/<%= pkg.constructor %>.css'], 
-						dest: './dist/<%= pkg.constructor %>.css'
+						src: ['./src/<%= pkg.constructor_name %>.css'], 
+						dest: './dist/<%= pkg.constructor_name %>.css'
 					}
 				]
 			},
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 						flatten: true,
 						expand: true,
 						src: ['./dist/*'],
-						dest: './<%= pkg.constructor %>'
+						dest: './<%= pkg.constructor_name %>'
 					}
 				]
 			}
@@ -59,23 +59,23 @@ module.exports = function(grunt) {
 		},
 		cssmin: {
 			options: {
-				banner: '/* jQuery <%= pkg.constructor %> <%= pkg.version %> */',
+				banner: '/* jQuery <%= pkg.constructor_name %> <%= pkg.version %> */',
 				report: 'gzip'
 			},
 			compress: {
 				files: {
-					'./dist/<%= pkg.constructor %>.min.css': ['src/<%= pkg.constructor %>.css']
+					'./dist/<%= pkg.constructor_name %>.min.css': ['src/<%= pkg.constructor_name %>.css']
 				}
 			}
 		},
 		compress: {
 			main: {
 				options: {
-					archive: './<%= pkg.constructor %>-<%= pkg.version %>-Download.zip'
+					archive: './<%= pkg.constructor_name %>-<%= pkg.version %>-Download.zip'
 				},
 				files: [
 					{
-						src: ['./<%= pkg.constructor %>/*'], 
+						src: ['./<%= pkg.constructor_name %>/*'], 
 						dest: './',
 						filter: 'isFile'
 					}
@@ -134,9 +134,9 @@ module.exports = function(grunt) {
 			staticMethods: [],
 			options: []
 		};
-		docs.constructor = data.classes[pkg.constructor];
+		docs.constructor = data.classes[pkg.constructor_name];
 		data.classitems.sort(alphabetic).forEach(function(item) {
-			if (item['class'] != pkg.constructor) {
+			if (item['class'] != pkg.constructor_name) {
 				return;
 			}
 			if (item.itemtype == 'property' && item.name == 'options') {
@@ -201,13 +201,14 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('updateVersions', 'Update version strings in files', function() {
 		// update in dist version == '%VERSION%';
-		replaceInFile('dist/'+pkg.constructor+'.js', '%VERSION%', pkg.version);
+		replaceInFile('dist/'+pkg.constructor_name+'.js', '%VERSION%', pkg.version);
 		// update version in package.json to match *.jquery.json
 		replaceInFile('./package.json', /("version"\s*:\s*").+?"/, '$1'+pkg.version+'"');
 	});
 	
+	// $ grunt scaffold --constructor_name=NAME --method=NAME
 	grunt.registerTask('scaffold', 'Init a new plugin by replacing all the instances of CONSTRUCTOR and METHOD with the given values', function() {
-		var constructor = grunt.option('constructor');
+		var constructor = grunt.option('constructor_name');
 		var method = grunt.option('method');		
 		// replace CONSTRUCTOR and METHOD strings in files
 		replaceInFile('./src/CONSTRUCTOR.js', /CONSTRUCTOR/g, constructor);

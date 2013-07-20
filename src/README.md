@@ -5,7 +5,7 @@ Version <%- pkg.version %>, <%- grunt.template.today("mmm yyyy") %>, MIT License
 
 <%- pkg.description %>
 
-[Download](<%- pkg.homepage %>/<%- pkg.constructor %>-<%- pkg.version %>-Download.zip?raw=true), [Demos](#), [Unit tests](#)
+[Download](<%- pkg.homepage %>/<%- pkg.constructor_name %>-<%- pkg.version %>-Download.zip?raw=true), [Demos](#), [Unit tests](#)
 
 Table of Contents
 -
@@ -43,14 +43,14 @@ How to Use
 Hi
 
 ```html
-<link  href="/js/<%- pkg.constructor %>.min.css" rel="stylesheet" />
-<script src="/js/<%- pkg.constructor %>.min.js"></script>
+<link  href="/js/<%- pkg.constructor_name %>.min.css" rel="stylesheet" />
+<script src="/js/<%- pkg.constructor_name %>.min.js"></script>
 ```
 
 Then somewhere in your code, call:
 
 ```javascript
-var instance = new $.<%- pkg.constructor %>(selector, options);
+var instance = new $.<%- pkg.constructor_name %>(selector, options);
 // OR
 $(selector).<%- pkg.method %>(options);
 ```
@@ -76,7 +76,7 @@ Options
 	<% }); %>
 </table>
 
-Also note that default options can be overwritten by altering `$.<%- pkg.constructor %>.defaultOptions`.
+Also note that default options can be overwritten by altering `$.<%- pkg.constructor_name %>.defaultOptions`.
 
 Events
 -
@@ -106,7 +106,7 @@ How is data passed to event callbacks?
 * To prevent a default action, call `event.preventDefault()`
 * To cancel the firing of other attached callbacks, call `event.stopImmediatePropagation()`
 * In some case, altering information on the `event` object will change the behavior of the default action
-* The callback will be fired in the scope of the <%- pkg.constructor %> instance. In other words, using `this` in the callback will refer to the <%- pkg.constructor %> instance. See the [Instance Properties](#instance-properties) and [Instance Methods](#instance-methods) sections below for more information.
+* The callback will be fired in the scope of the <%- pkg.constructor_name %> instance. In other words, using `this` in the callback will refer to the <%- pkg.constructor_name %> instance. See the [Instance Properties](#instance-properties) and [Instance Methods](#instance-methods) sections below for more information.
 
 The following is a description of each event.
 
@@ -150,7 +150,7 @@ Instance methods may be called using an Object Oriented style or with the classi
 
 ```javascript
 // Object Oriented Style
-var <%- pkg.method %> = new $.<%- pkg.constructor %>(input, options);
+var <%- pkg.method %> = new $.<%- pkg.constructor_name %>(input, options);
 <%- pkg.method %>.methodName(arg1, arg2, argN);
 
 // jQuery Style
