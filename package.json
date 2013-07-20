@@ -1,6 +1,11 @@
 {
   "name": "",
-  "version": "0.1.0",
+  "version": "0.1.0-pre",
+  "author": {
+    "name": "Ken Snyder",
+    "email": "kendsnyder@gmail.com",
+    "url": "http://kendsnyder.com"
+  },  
   "engines": {
     "node": ">= 0.8.0"
   },

@@ -2,7 +2,7 @@
   "name": "***",
   "title": "***",
   "description": "***",
-  "version": "0.1.0",
+  "version": "0.1.0-pre",
   "homepage": "https://github.com/kensnyder/***",
   "author": {
     "name": "Ken Snyder",
@@ -27,3 +27,4 @@
   },
   "keywords": []
 }
+\
