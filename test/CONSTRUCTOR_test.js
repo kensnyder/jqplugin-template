@@ -20,6 +20,8 @@
 */
 (function($) { "use strict";
 
+var $workspace = $('#qunit-fixture');
+
 var config = {
 	setup: function() {
 

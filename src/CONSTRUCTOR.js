@@ -64,7 +64,7 @@
 		 * @param {Object} [options=CONSTRUCTOR.defaultOptions] See {{#crossLink "CONSTRUCTOR/options:property"}}options property{{/crossLink}} for full documentation
 		 */
 		initialize: function($element, options) {
-						
+			this.options = options || {};
 						
 			/**
 			 * Fired after initialization
@@ -98,7 +98,7 @@
 		// otherwise create new $.CONSTRUCTOR instance but return the jQuery instance
 		return this.each(function() {     
 			var $elem = $(this);
-			var instance = new Ctor($elem, options);
+			var instance = new $.CONSTRUCTOR($elem, options);
 			$elem.data('CONSTRUCTORInstance', instance);
 		});
 	}

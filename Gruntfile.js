@@ -105,6 +105,10 @@ module.exports = function(grunt) {
 					parseOnly: false
 				}
 			}
+		},
+		watch: {
+			files: ['./test/*','./src/*','./libs/*','./Gruntfile.js','./jshint.conf.json'],
+			tasks: ['jshint','qunit']
 		}
 	});
 
@@ -118,6 +122,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-yuidoc');
 	grunt.loadNpmTasks('grunt-contrib-compress');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 		
 	grunt.registerTask('logo', 'Copy logo to yuidoc files', function() {
 		//grunt.file.copy('demos/assets/img/logo.png', 'docs/assets/css/logo.png');
